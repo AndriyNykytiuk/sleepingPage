@@ -1,0 +1,57 @@
+/* customHover.css */
+
+@keyframes arcMotion {
+    0% {
+        transform: translateX(-14px) translateY(-5px) rotate(10deg);
+        opacity: 1;
+       
+        -webkit-transform: translateX(-14px) translateY(-5px) rotate(10deg);
+        -moz-transform: translateX(-14px) translateY(-5px) rotate(10deg);
+        -ms-transform: translateX(-14px) translateY(-5px) rotate(10deg);
+        -o-transform: translateX(-14px) translateY(-5px) rotate(10deg);
+}
+   
+    50% {
+        transform: translateX(14px) translateY(-3px) rotate(-7deg);
+        -webkit-transform: translateX(14px) translateY(-3px) rotate(-7deg);
+        -moz-transform: translateX(14px) translateY(-3px) rotate(-7deg);
+        -ms-transform: translateX(14px) translateY(-3px) rotate(-7deg);
+        -o-transform: translateX(14px) translateY(-3px) rotate(-7deg);
+}
+   
+    100% {
+        transform: translateX(-14px) translateY(-5px) rotate(11deg);
+        -webkit-transform: translateX(-14px) translateY(-5px) rotate(11deg);
+        -moz-transform: translateX(-14px) translateY(-5px) rotate(11deg);
+        -ms-transform: translateX(-14px) translateY(-5px) rotate(11deg);
+        -o-transform: translateX(-14px) translateY(-5px) rotate(11deg);
+}
+}
+
+.customHover {
+  position: relative;
+}
+
+.customHover::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  /*Зменшено,щобвідповідатизображеннюкурсора*/height: 30px;
+  /*Зменшено,щобвідповідатизображеннюкурсора*/background: url('../img/cursor.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0;
+  transition: transform 0.7 ease-in-out, left 0.3s ease-in-out;
+  -webkit-transition: transform 0.7 ease-in-out, left 0.3s ease-in-out;
+  -moz-transition: transform 0.7 ease-in-out, left 0.3s ease-in-out;
+  -ms-transition: transform 0.7 ease-in-out, left 0.3s ease-in-out;
+  -o-transition: transform 0.7 ease-in-out, left 0.3s ease-in-out;
+}
+
+.customHover:hover::before {
+    opacity: 1;
+    /*Робимовидимимпринаведенні*/animation: arcMotion 2.5s ease-in-out infinite;
+    
+    -webkit-animation: arcMotion 3.5s ease-in-out infinite;
+}
